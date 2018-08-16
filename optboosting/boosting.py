@@ -1,3 +1,6 @@
+# coding: utf-8
+from __future__ import print_function
+
 import numpy as np
 from sklearn.base import BaseEstimator, clone
 from sklearn.tree import DecisionTreeRegressor

@@ -3,7 +3,7 @@
 optboosting
 ===========
 
-optboosting is a Python library for boosting based from a functional point of view, in particular based on gradient and proximal methods (referred to as gradient and proximal boosting). It also implements Nesterov's acceleration, enabling to build accurate models with less weak learners than traditional boosting.
+optboosting is a Python library for boosting (based on a functional optimizaztion point of view), in particular based on gradient and proximal methods (referred to as gradient and proximal boosting). It also implements Nesterov's acceleration, enabling to build accurate models with less weak learners than traditional boosting.
 
 Although a simple implementation of boosting, optboosting follows the `scikit-learn <http://scikit-learn.org>`_ style of programming.
 
@@ -20,9 +20,9 @@ Example
     x, y = make_classification(n_samples=500, n_features=2, n_redundant=0, random_state=42)
     y = 2 * y - 1  # Make labels +1 or -1
 
-    # Define and fit the model
-    apb = OptBoosting(loss='hinge', descent='proximal', n_estimators=15, fast=True)  # Accelerated proximal boosting
-    apb.fit(x, y)  # Fit the model
+    # Define and fit the accelerated proximal boosting model
+    apb = OptBoosting(loss='hinge', descent='proximal', n_estimators=15, fast=True)
+    apb.fit(x, y)
 
     # Prediction
     print('Decision values:', apb.decision_function(x)[:10])
